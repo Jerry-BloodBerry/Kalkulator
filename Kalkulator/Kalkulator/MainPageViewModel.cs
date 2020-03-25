@@ -81,7 +81,7 @@ namespace Kalkulator
             set
             {
                 number1 = value;
-                var args = new PropertyChangedEventArgs(nameof(Number2));
+                var args = new PropertyChangedEventArgs(nameof(Number1));
                 PropertyChanged?.Invoke(this,args);
             }
         }
