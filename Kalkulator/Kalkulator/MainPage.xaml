@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Kalkulator"
+             x:Class="Kalkulator.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="calculator" BackgroundColor="PowderBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Editor Grid.Row="1" Grid.Column="0" Margin="10,0" Placeholder="Number 1" Text="{Binding Number1}" FontSize="11"/>
+            <Editor Grid.Row="1" Grid.Column="2" Margin="10,0" Placeholder="Number 2" Text="{Binding Number2}" FontSize="11"/>
+            <Button Grid.Row="2" Grid.Column="0" Margin="10,0" TextColor="White" Grid.ColumnSpan="3" 
+                    FontSize="11" Text="Calculate!" BackgroundColor="Navy" Command="{Binding Calculate}"/>
+            <Label Margin ="5,0" Text="Addition: " Grid.Row="3" Grid.Column="0" FontSize="11"/>
+            <Label Text="{Binding Addition}" Grid.Row="3" Grid.Column="1" FontSize="11"/>
+            <Label Margin ="5,0" Text="Subtraction: " Grid.Row="4" Grid.Column="0" FontSize="11"/>
+            <Label Text="{Binding Subtraction}" Grid.Row="4" Grid.Column="1" FontSize="11"/>
+            <Label Margin ="5,0" Text="Multiplication: " Grid.Row="5" Grid.Column="0" FontSize="11"/>
+            <Label Text="{Binding Multiplication}" Grid.Row="5" Grid.Column="1" FontSize="11"/>
+            <Label Margin ="5,0" Text="Division: " Grid.Row="6" Grid.Column="0" FontSize="11"/>
+            <Label Text="{Binding Division}" Grid.Row="6" Grid.Column="1" FontSize="11"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
